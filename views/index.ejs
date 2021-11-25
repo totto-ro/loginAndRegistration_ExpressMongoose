@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Register</title>
+</head>
+<body>
+    <main>
+        <section class="leftSide">
+            <form class="newRegister" action="/register" method="POST">
+                <ul>
+                    <li><h1>Register</h1></li>
+                    <% if( messages.messageError ){ %>
+                        <div class="error">
+                                <p> <%= messages.messageError %> </p>
+                        </div>
+                    <% } %>
+                    <% if( messages.emailError ){ %>
+                        <div class="error">
+                                <p> <%= messages.emailError %> </p>
+                        </div>
+                    <% } %>
+                    <li class="addInput">
+                        <label for="firstName">
+                            First Name:
+                        </label>
+                        <input type="text" id="firstName" name="firstName" />
+                    </li>
+                    <li class="addInput">
+                        <label for="lastName">
+                            Last Name:
+                        </label>
+                        <input type="text" id="lastName" name="lastName" />
+                    </li>
+                    <li class="addInput">
+                        <label for="email">
+                            Email:
+                        </label>
+                        <input type="text" id="email" name="email" />
+                    </li>
+                    <li class="addInput">
+                        <label for="birthday">
+                            Birthday:
+                        </label>
+                        <input type="date" id="birthday" name="birthday">
+                    </li>
+                    <li class="addInput">
+                        <label for="password">
+                            Password:
+                        </label>
+                        <input type="password" id="password" name="password" />
+                    </li>
+                    <li class="addInput">
+                        <label for="confirm">
+                            Confirm Password:
+                        </label>
+                        <input type="password" id="password" name="confirm" />
+                    </li>
+                    <li>
+                        <button type="submit" value="Register">
+                            Register
+                        </button>
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <section class="rightSide">
+            <form action="/login" method="POST">
+                <div class="userLogin" >
+                    <ul>
+                        <li><h1>Login</h1></li>
+                        <% if( messages.login ){ %>
+                            <div class="error">
+                                    <p> <%= messages.login %> </p>
+                            </div>
+                        <% } %>
+                        <li class="addInput">
+                            <label for="email">
+                                Email:
+                            </label>
+                            <input type="text" id="email" name="email" />
+                        </li>
+                        <li class="addInput">
+                            <label for="password">
+                                Password:
+                            </label>
+                            <input type="password" id="password" name="password" />
+                        </li>
+                        <li>
+                            <button type="submit" value="Register">
+                                Login
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
